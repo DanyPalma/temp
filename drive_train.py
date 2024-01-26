@@ -50,27 +50,9 @@ class drive_train:
             #find ideal gears
             ideal_gears = self.get_gear_combination(target_ratio, print_result=False)
             
-            
-            front = front_cogs.index(initial_gear_combination[0])
-            rear = rear_cogs.index(initial_gear_combination[1])
-            
-            # first shift the front gear to the target gear
-            while front_cogs[front] != ideal_gears[0]:
-                if front_cogs[front] < ideal_gears[0]:
-                    front -= 1
-                elif front_cogs[front] > ideal_gears[0]:
-                    front += 1  
                     
-                    
-            # then shift the rear to the target gear
-            while rear_cogs[rear] != ideal_gears[1]:
-                if rear_cogs[rear] < ideal_gears[1]:
-                    rear -= 1
-                elif rear_cogs[rear] > ideal_gears[1]:
-                    rear += 1
-                    
-            print(f"Shift the front gear from the {initial_gear_combination[0]} tooth cog, to the {front_cogs[front]} tooth cog.")
-            print(f"Then, shift the rear gear from the {initial_gear_combination[1]} tooth cog, to the {rear_cogs[rear]} tooth cog.")
+            print(f"Shift the front gear from the {initial_gear_combination[0]} tooth cog, to the {ideal_gears[0]} tooth cog.")
+            print(f"Then, shift the rear gear from the {initial_gear_combination[1]} tooth cog, to the {ideal_gears[1]} tooth cog.")
 
     
     # this method will produce a formatted shift sequence for a given target ratio and initial gear combination
