@@ -44,8 +44,6 @@ class drive_train:
             print("You are already at the target ratio")
         
         else: 
-            front_cogs = self.front_cogs
-            rear_cogs = self.rear_cogs
             
             #find ideal gears
             ideal_gears = self.get_gear_combination(target_ratio, print_result=False)
